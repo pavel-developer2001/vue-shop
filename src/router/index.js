@@ -1,16 +1,16 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 
-import Home from '../pages/Home'
-import Cart from '../pages/Cart'
+import Home from "../pages/Home";
+import Cart from "../pages/Cart";
 
-
+/* eslint-disable */ 
 const routes = [
   {
-    path: '/',
+    path: "/",
     component: Home
   },
   {
-    path: '/cart',
+    path: "/cart",
     component: Cart
   }
 ];
