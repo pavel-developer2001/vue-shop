@@ -1,32 +1,38 @@
 <template>
-  <div class='home'>
+  <div class="home">
     <Filters />
-    <div class='list'>
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
+    <div class="list">
+      <div v-for="product in products" :key="product.id">
+      <ProductCard
+        :img="product.img"
+        :title="product.title"
+        :price="product.price"
+        :id="product.id"
+      />
+      </div>
     </div>
-    
   </div>
 </template>
 
 <script>
-import Filters from '../components/Filters'
-import ProductCard from '../components/ProductCard'
+import Filters from "../components/Filters";
+import ProductCard from "../components/ProductCard";
 export default {
   name: "Home",
   components: {
     Filters,
     ProductCard
+  },
+  data() {
+    return {
+      products: this.$store.state.products
+    };
   }
 };
 </script>
 
 <style scoped>
-.home{
+.home {
   display: flex;
 }
 .list {
