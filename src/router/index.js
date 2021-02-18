@@ -9,13 +9,6 @@ const routes = [
   {
     path: "/",
     component: Home
-    // children: [
-    //   {
-    //     path: '/:productId?',
-    //     component: ProductPage,
-    //     props: true
-    //   }
-    // ]
   },
   {
     path: '/:productId?',

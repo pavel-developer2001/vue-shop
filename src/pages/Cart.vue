@@ -1,11 +1,8 @@
 <template>
   <div class="cart">
     <h3 class="cart__title">Корзина</h3>
-    <div class="cart__list">
-      <CartItem />
-      <CartItem />
-      <CartItem />
-      <CartItem />
+    <div class="cart__list" v-for="item in cardItems" :key="item.id">
+      <CartItem :title="item.title" :price="item.price" />
     </div>
     <h4 class="result">Итог: <span class="result-money">8000 рублей</span></h4>
   </div>
@@ -16,6 +13,11 @@ import CartItem from "../components/CartItem";
 
 export default {
   name: "Cart",
+  data() {
+    return {
+      cardItems: this.$store.state.cart
+    };
+  },
   components: {
     CartItem
   }

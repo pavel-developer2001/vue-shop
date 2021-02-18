@@ -1,16 +1,16 @@
 <template>
   <div class="product">
-    <img class="product__img" :src="products.img" />
+    <img class="product__img" :src="product.img" />
     <div class="product__content">
-      <h3 class="title">{{ products.title }}</h3>
+      <h3 class="title">{{ product.title }}</h3>
       <p class="describe">
-        {{ products.describe }}
+        {{ product.describe }}
       </p>
       <div class="money">
         <span class="money-title">Цена: </span>
-        <strong class="prize">{{ products.price }} рублей</strong>
+        <strong class="prize">{{ product.price }} рублей</strong>
       </div>
-      <Button @click="addItem()" />
+      <Button @click="addProduct()" />
     </div>
   </div>
   <div class="comment">
@@ -32,11 +32,13 @@ export default {
   },
   data() {
     return {
-      products: this.$store.state.products.find(obj => obj.id == this.productId)
+      product: this.$store.state.products.find(obj => obj.id == this.productId)
     };
   },
   methods: {
-    addItem() {}
+    addProduct() {
+      this.$store.state.cart.push(this.product);
+    }
   },
   components: {
     Button,

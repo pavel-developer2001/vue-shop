@@ -1,11 +1,9 @@
 <template>
   <div class="cart-item">
-    <strong class="cart-title"
-      >Игровой ноутбук ASUS TUF Gaming F15 FX506LI-HN012</strong
-    >
+    <strong class="cart-title">{{ title }}</strong>
     <div class="cart-money">
       <span class="cart-prize">Цена:</span>
-      <strong class="money">2000 рублей</strong>
+      <strong class="money">{{ price }} рублей</strong>
     </div>
     <button class="delete-item">
       <svg
@@ -25,7 +23,15 @@
 </template>
 <script>
 export default {
-  name: "CartItem"
+  name: "CartItem",
+  props: {
+    title: {
+      type: String
+    },
+    price: {
+      type: Number
+    }
+  }
 };
 </script>
 <style scoped>

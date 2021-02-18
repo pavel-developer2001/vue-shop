@@ -58,10 +58,16 @@ export default createStore({
             '14.0" 1920 x 1080 IPS, несенсорный, AMD Ryzen 3 4300U 2700 МГц, 8 ГБ, SSD 512 ГБ, граф. адаптер: встроенный, без ОС, цвет крышки серебристый',
           price: 1500
         }
-      ]
+      ],
+      cart: []
     };
   },
   mutations: {},
-  actions: {},
+  actions: {
+    // addItem(context) {
+    //   this.state.cart.push(context)
+    //   console.log(this.state.cart)
+    // }
+  },
   modules: {}
 });
