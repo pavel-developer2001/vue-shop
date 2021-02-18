@@ -2,9 +2,11 @@
   <div class="cart">
     <h3 class="cart__title">Корзина</h3>
     <div class="cart__list" v-for="item in cardItems" :key="item.id">
-      <CartItem :title="item.title" :price="item.price" :id=item.id />
+      <CartItem :title="item.title" :price="item.price" :id="item.id" />
     </div>
-    <h4 class="result">Итог: <span class="result-money">8000 рублей</span></h4>
+    <h4 class="result">
+      Итог: <span class="result-money">{{ totalPrice }} рублей</span>
+    </h4>
   </div>
 </template>
 
@@ -15,7 +17,11 @@ export default {
   name: "Cart",
   data() {
     return {
-      cardItems: this.$store.state.cart
+      cardItems: this.$store.state.cart,
+      totalPrice: this.$store.state.cart.reduce(
+        (total, obj) => obj.price + total,
+        0
+      )
     };
   },
   components: {

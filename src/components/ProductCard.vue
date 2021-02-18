@@ -8,7 +8,7 @@
       <span class="money-prize">Цена: </span>
       <strong class="prize">{{ price }} рублей</strong>
     </div>
-    <Button />
+    <Button @click="addProduct()" />
   </div>
 </template>
 
@@ -28,6 +28,12 @@ export default {
     },
     id: {
       type: Number
+    }
+  },
+  methods: {
+    addProduct() {
+      const item = this.$store.state.products.find(obj => obj.id === this.id);
+      this.$store.state.cart.push(item);
     }
   },
   components: {

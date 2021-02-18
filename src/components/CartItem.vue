@@ -38,7 +38,7 @@ export default {
   },
   methods: {
     deleteItem(itemId) {
-      this.$store.state.cart.filter(item => item.id !== itemId);
+      this.$store.state.cart.filter(item => item.id != itemId);
     }
   }
 };
