@@ -79,4 +79,29 @@ export default {
 .delete-item:focus {
   outline: none;
 }
+@media (max-width: 670px) {
+  .cart-money {
+    padding-right: 6%;
+  }
+  .cart-title {
+    font-weight: 500;
+    min-width: 330px;
+    max-width: 330px;
+  }
+}
+@media (max-width: 535px) {
+  .cart-title {
+    min-width: 240px;
+    max-width: 240px;
+  }
+}
+@media (max-width: 440px) {
+  .cart-item {
+    display: block;
+  }
+  .cart-title {
+    min-width: 180px;
+    max-width: 180px;
+  }
+}
 </style>
