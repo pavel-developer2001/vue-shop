@@ -40,7 +40,17 @@
 
 <script>
 export default {
-  name: "Navbar"
+  name: "Navbar",
+  data(){
+    return {
+      inputValue: ""
+    }
+  },
+  methods: {
+    searchItem(){
+      console.log(this.inputValue)
+    }
+  }
 };
 </script>
 

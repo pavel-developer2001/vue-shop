@@ -38,7 +38,7 @@ export default {
   },
   methods: {
     deleteItem(itemId) {
-      this.$store.state.cart.filter(item => item.id != itemId);
+      this.$store.state.cart.splice(itemId, 1);
     }
   }
 };
@@ -55,6 +55,7 @@ export default {
 }
 .cart-title {
   font-weight: 500;
+  min-width: 396px;
   max-width: 396px;
 }
 .cart-money {
