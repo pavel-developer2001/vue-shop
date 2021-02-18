@@ -1,4 +1,5 @@
 <template>
+<h3>Поиск и фильтры не работают</h3>
   <div class="home">
     <Filters />
     <div class="list">
