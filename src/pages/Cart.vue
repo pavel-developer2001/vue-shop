@@ -2,7 +2,7 @@
   <div class="cart">
     <h3 class="cart__title">Корзина</h3>
     <div class="cart__list" v-for="item in cardItems" :key="item.id">
-      <CartItem :title="item.title" :price="item.price" />
+      <CartItem :title="item.title" :price="item.price" :id=item.id />
     </div>
     <h4 class="result">Итог: <span class="result-money">8000 рублей</span></h4>
   </div>

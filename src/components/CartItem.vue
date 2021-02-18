@@ -14,6 +14,7 @@
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
+          @click="deleteItem(id)"
           d="M1.5 24.8889C1.5 26.6 2.85 28 4.5 28H16.5C18.15 28 19.5 26.6 19.5 24.8889V6.22222H1.5V24.8889ZM21 1.55556H15.75L14.25 0H6.75L5.25 1.55556H0V4.66667H21V1.55556Z"
           fill="#EB5757"
         />
@@ -30,6 +31,14 @@ export default {
     },
     price: {
       type: Number
+    },
+    id: {
+      type: Number
+    }
+  },
+  methods: {
+    deleteItem(itemId) {
+      this.$store.state.cart.filter(item => item.id !== itemId);
     }
   }
 };
