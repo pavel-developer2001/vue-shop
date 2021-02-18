@@ -3,7 +3,7 @@
     <Filters />
     <div class="list">
       <div v-for="product in products" :key="product.id">
-      <ProductCard
+        <ProductCard
         :img="product.img"
         :title="product.title"
         :price="product.price"

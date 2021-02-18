@@ -11,20 +11,25 @@ const routes = [
     component: Home
     // children: [
     //   {
-    //     path: '/productId?',
+    //     path: '/:productId?',
     //     component: ProductPage,
     //     props: true
     //   }
     // ]
   },
   {
+    path: '/:productId?',
+    component: ProductPage,
+    props: true
+  },
+  {
     path: "/cart",
     component: Cart
   },
-  {
-    path: "/1",
-    component: ProductPage
-  },
+  // {
+  //   path: "/1",
+  //   component: ProductPage
+  // },
 ];
 
 const router = createRouter({

@@ -1,21 +1,16 @@
 <template>
   <div class="product">
-    <img
-      class="product__img"
-      src="https://content2.onliner.by/catalog/device/main/40b4ea5dfad47cfbf39a72e5afbef237.jpeg"
-    />
+    <img class="product__img" :src="products.img" />
     <div class="product__content">
-      <h3 class="title">Игровой ноутбук ASUS TUF Gaming F15 FX506LI-HN012</h3>
+      <h3 class="title">{{ products.title }}</h3>
       <p class="describe">
-        15.6" 1920 x 1080 IPS, несенсорный, Intel Core i5 10300H 2500 МГц, 8 ГБ,
-        SSD 512 ГБ, граф. адаптер: NVIDIA GeForce GTX 1650 Ti 4 ГБ, без ОС, цвет
-        крышки черный
+        {{ products.describe }}
       </p>
       <div class="money">
         <span class="money-title">Цена: </span>
-        <strong class="prize">2000 рублей</strong>
+        <strong class="prize">{{ products.price }} рублей</strong>
       </div>
-      <Button />
+      <Button @click="addItem()" />
     </div>
   </div>
   <div class="comment">
@@ -30,6 +25,19 @@ import AddComment from "../components/AddComment";
 
 export default {
   name: "ProductPage",
+  props: {
+    productId: {
+      type: String
+    }
+  },
+  data() {
+    return {
+      products: this.$store.state.products.find(obj => obj.id == this.productId)
+    };
+  },
+  methods: {
+    addItem() {}
+  },
   components: {
     Button,
     AddComment

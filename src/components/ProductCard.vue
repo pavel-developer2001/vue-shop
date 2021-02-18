@@ -1,11 +1,9 @@
 <template>
   <div class="card">
-    <img class="card__img" :src=img />
-    <router-link to="/1" >
-    <h5 class="card__title">
+    <img class="card__img" :src="img" />
+    <h5 class="card__title" @click="$router.push(`/${id}`)">
       {{ title }}
     </h5>
-    </router-link>
     <div class="card__money">
       <span class="money-prize">Цена: </span>
       <strong class="prize">{{ price }} рублей</strong>
